@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_28_083714) do
+ActiveRecord::Schema.define(version: 2019_10_28_092915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,21 +30,21 @@ ActiveRecord::Schema.define(version: 2019_10_28_083714) do
   create_table "fosterings", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "dog_id"
-    t.bigint "review_id"
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dog_id"], name: "index_fosterings_on_dog_id"
-    t.index ["review_id"], name: "index_fosterings_on_review_id"
     t.index ["user_id"], name: "index_fosterings_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "content"
+    t.bigint "fostering_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["fostering_id"], name: "index_reviews_on_fostering_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,6 +65,6 @@ ActiveRecord::Schema.define(version: 2019_10_28_083714) do
 
   add_foreign_key "dogs", "users"
   add_foreign_key "fosterings", "dogs"
-  add_foreign_key "fosterings", "reviews"
   add_foreign_key "fosterings", "users"
+  add_foreign_key "reviews", "fosterings"
 end
