@@ -1,0 +1,2 @@
+class FosteringsController < ApplicationController
+end
