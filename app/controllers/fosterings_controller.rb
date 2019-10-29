@@ -1,5 +1,5 @@
 class FosteringsController < ApplicationController
-  before_action :set_fostering, only: [:edit, :update, :show, :delete]
+  before_action :set_fostering, only: [:edit, :update, :show, :destroy]
 
   def show
     @review = Review.new
@@ -21,7 +21,7 @@ class FosteringsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @fostering.destroy
     redirect_to dogs_path
   end

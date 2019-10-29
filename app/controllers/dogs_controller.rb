@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :edit, :update, :delete, :new]
+  before_action :set_dog, only: [:show, :edit, :update, :destroy, :new]
 
   def index
     @dogs = Dog.all
@@ -31,7 +31,7 @@ class DogsController < ApplicationController
     redirect_to dog_path(@dog)
   end
 
-  def delete
+  def destroy
     @dog.destroy
     redirect_to dog_path(@dog)
   end
