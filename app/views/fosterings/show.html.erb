@@ -1,0 +1,15 @@
+<%= @fostering.user.first_name %>
+<%= @fostering.dog.name %>
+<%= @fostering.start_date %>
+<%= @fostering.end_date %>
+<% @fostering.reviews.each do |r| %>
+  <%= r.rating %>
+  <%= r.content %>
+<% end %>
+
+<%= simple_form_for [@fostering, Review.new] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
+
