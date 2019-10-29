@@ -1,0 +1,57 @@
+
+.btn-main{
+  color: $white;
+  background: $main-blue;
+  border: 1px solid $white;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+  width: 110px;
+}
+
+.btn-main:hover{
+  opacity: 0.75;
+  color: $white;
+  background: $bright-teal;
+  text-decoration: none;
+}
+
+
+.btn-cta{
+  color: $white;
+  background: $main-blue;
+  border: 1px solid $white;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+  width: 200px;
+}
+
+.btn-cta:hover{
+  opacity: 0.75;
+  color: $white;
+  background: $bright-teal;
+  text-decoration: none;
+}
+
+
+.btn-card{
+  color: $white;
+  background: $main-blue;
+  border: 1px solid $white;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+  width: 100px;
+  font-size: 12px;
+}
+
+.btn-card:hover{
+  opacity: 0.75;
+  color: $white;
+  background: $bright-teal;
+  text-decoration: none;
+}
