@@ -1,7 +1,8 @@
 class FosteringsController < ApplicationController
-  before_action :set_review, only: [:edit, :update, :show, :delete]
+  before_action :set_fostering, only: [:edit, :update, :show, :delete]
 
   def show
+    @review = Review.new
   end
 
   def new
