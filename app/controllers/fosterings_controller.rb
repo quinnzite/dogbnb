@@ -2,15 +2,18 @@ class FosteringsController < ApplicationController
   before_action :set_fostering, only: [:edit, :update, :show, :delete]
 
   def show
+    authorize @fostering
     @review = Review.new
   end
 
   def new
     @fostering = Fostering.new
+    authorize @fostering
   end
 
   def create
     @fostering = Fostering.new(fostering_params)
+    authorize @fostering
     @fostering.user = current_user
     @fostering.dog = Dog.find(params[:dog_id])
     @fostering.save
@@ -22,6 +25,7 @@ class FosteringsController < ApplicationController
   end
 
   def delete
+    authorize @fostering
     @fostering.destroy
     redirect_to dogs_path
   end
