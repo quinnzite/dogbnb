@@ -9,12 +9,12 @@ class FosteringsController < ApplicationController
   end
 
   def create
-    @fostering = Fostering.new(review_params)
-    @fostering.user_id = current_user
-    @fostering.dog_id = Dog.find(params[:dog_id])
+    @fostering = Fostering.new(fostering_params)
+    @fostering.user = current_user
+    @fostering.dog = Dog.find(params[:dog_id])
     @fostering.save
     if @fostering.save
-      redirect_to dogs_path
+      redirect_to dog_path(@fostering.dog_id)
     else
       render :new
     end
