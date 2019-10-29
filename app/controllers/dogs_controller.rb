@@ -1,20 +1,23 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :edit, :update, :delete, :new]
+  before_action :set_dog, only: [:show, :edit, :update, :delete]
 
   def index
     @dogs = Dog.all
   end
 
   def show
+    authorize @dog
     @fostering = Fostering.new
   end
 
   def new
     @dog = Dog.new
+    authorize @dog
   end
 
   def create
     @dog = Dog.new(dog_params)
+    authorize @dog
     @dog.user = current_user
     if @dog.save
       redirect_to dog_path(@dog)
@@ -24,14 +27,17 @@ class DogsController < ApplicationController
   end
 
   def edit
+    authorize @dog
   end
 
   def update
+    authorize @dog
     @dog.update(dog_params)
     redirect_to dog_path(@dog)
   end
 
   def destroy
+    authorize @dog
     @dog.destroy
     redirect_to dogs_path
   end

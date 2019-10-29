@@ -3,3 +3,7 @@
     <p><%= link_to dog.name, dog_path(dog)%></p>
   </ul>
 <% end %>
+
+<% if policy(Dog).create? %>
+  <%= link_to "New Dog", new_dog_path %>
+<% end %>
