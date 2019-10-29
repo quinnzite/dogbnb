@@ -13,7 +13,6 @@ class FosteringsController < ApplicationController
     @fostering = Fostering.new(fostering_params)
     @fostering.user = current_user
     @fostering.dog = Dog.find(params[:dog_id])
-    @fostering.save
     if @fostering.save
       redirect_to dog_path(@fostering.dog_id)
     else
