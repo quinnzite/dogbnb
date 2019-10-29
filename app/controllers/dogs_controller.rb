@@ -36,10 +36,10 @@ class DogsController < ApplicationController
     redirect_to dog_path(@dog)
   end
 
-  def delete
+  def destroy
     authorize @dog
     @dog.destroy
-    redirect_to dog_path(@dog)
+    redirect_to dogs_path
   end
 
   private
