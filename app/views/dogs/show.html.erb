@@ -1,0 +1,10 @@
+<h1>Add a new pal for <%= @dog.name %></h1>
+<p><%= @dog.breed %></p>
+<p><%= @dog.age %></p>
+<p><%= @dog.location %></p>
+
+<%= simple_form_for [@dog, @fostering] do |f| %>
+ <%= f.input :start_date %>
+ <%= f.input :end_date %>
+ <%= f.submit %>
+<% end %>
