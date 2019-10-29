@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :dogs do
     resources :fosterings, only: :create
   end
-  resources  :fosterings, only: [:delete, :show] do
+  resources  :fosterings, only: [:delete, :show, :new] do
     resources :reviews, only: :create
   end
-  resources :reviews, only: [:new, :edit, :update]
+  resources :reviews, only: [:new, :update]
 end
