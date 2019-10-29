@@ -20,6 +20,11 @@
       <%= javascript_pack_tag 'application' %>
       <div class="push"></div>
     </div>
+    <%= render '/shared/nav_bar' %>
+    <%= yield %>
+    <%= render 'shared/flashes' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
     <%= render 'shared/footer' %>
   </body>
 </html>
