@@ -20,7 +20,7 @@ class FosteringsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @fostering.destroy
     redirect_to dogs_path
   end
