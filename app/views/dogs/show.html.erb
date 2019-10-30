@@ -1,18 +1,27 @@
 
-<br>
-<br>
-<br>
-<h1>Meet <%= @dog.name.capitalize %>!</h1>
-<%= cl_image_tag @dog.photo, height: 400, width: 400, crop: :fill, :radius=>"max" %>
-<p><strong>Breed: </strong><%= @dog.breed.capitalize %></p>
-<p><strong>Age: </strong><%= @dog.age %></p>
-<p><strong>Location: </strong><%= @dog.location.capitalize %></p>
-
+<div class="container">
+  <h1 class = "meet-name" ><%= @dog.name.capitalize %></h1>
+    <div class="row d-flex justify-content-center" id = "dog-row">
+      <div class = "col-sm-6">
+        <div class = "dog-image">
+          <%= cl_image_tag @dog.photo, height: 500, width: 500, crop: :fill, class:"dog-image"%>
+        </div>
+      </div>
+      <div class = "col-sm-6 info-wrapper">
+      <h3><em><%= @dog.description %></em></h3>
+        <div class = "dog-info">
+          <p><strong>Breed: </strong><%= @dog.breed.capitalize %></p>
+          <p><strong>Age: </strong><%= @dog.age %></p>
+          <p><strong>Location: </strong><%= @dog.location.capitalize %></p>
+        </div>
+  </div>
+  </div>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn-cta" data-toggle="modal" data-target="#exampleModal">
   Foster <%= @dog.name.capitalize %>
 </button>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
