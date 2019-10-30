@@ -27,3 +27,17 @@
 .footer-copyright{
   font-size:12px;
 }
+html {
+position: relative;
+min-height: 100%;
+}
+body {
+margin: 0 0 100px;
+font-family: sans-serif;
+}
+.footer {
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+}

@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    authorize @review
     @fostering = Fostering.find(params[:fostering_id])
     @review.fostering = @fostering
     @review.save
@@ -14,6 +15,7 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    authorize @review
     @review.update(review_params)
     @review.save
     if @review.save
