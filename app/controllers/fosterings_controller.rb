@@ -26,7 +26,7 @@ class FosteringsController < ApplicationController
   def destroy
     authorize @fostering
     @fostering.destroy
-    redirect_to dogs_path
+    redirect_to user_dashboard_path
   end
 
   private
