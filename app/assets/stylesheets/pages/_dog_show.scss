@@ -1,5 +1,5 @@
 
-.container {
+.container-show {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -10,7 +10,6 @@
   margin-top: 80px;
   padding: 20px 0;
   color: $dark-blue;
-
 }
 
 .meet-name {
@@ -51,4 +50,8 @@
 
 .dog-image {
   border-radius: 30%;
+}
+
+.flatpickr-calendar.inline {
+  margin: auto;
 }
