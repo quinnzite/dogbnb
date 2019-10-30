@@ -1,0 +1,226 @@
+#banner-halloween,
+#banner-halloween-fi-pr-monthly,
+#banner-halloween-fr-pr-annual,
+#banner-halloween-fi-pr-annual {
+  background: #0E2A47;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 600;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+}
+#banner-halloween .logo-vertical,
+#banner-halloween-fi-pr-monthly .logo-vertical,
+#banner-halloween-fr-pr-annual .logo-vertical,
+#banner-halloween-fi-pr-annual .logo-vertical {
+  display: none;
+}
+#banner-halloween .notification__content,
+#banner-halloween-fi-pr-monthly .notification__content,
+#banner-halloween-fr-pr-annual .notification__content,
+#banner-halloween-fi-pr-annual .notification__content {
+  height: 100%;
+  width: 80%;
+  margin: 0 10%;
+  padding: 0;
+  position: relative;
+}
+#banner-halloween .hand,
+#banner-halloween-fi-pr-monthly .hand,
+#banner-halloween-fr-pr-annual .hand,
+#banner-halloween-fi-pr-annual .hand {
+  width: 84px;
+  height: 146px;
+  background-image: url("https://static.freepikcompany.com/flaticon/halloween/img/banners/hand.svg");
+  position: absolute;
+  bottom: -15px;
+  right: -85px;
+}
+@media (min-width: 992px) {
+  #banner-halloween .notification__content,
+#banner-halloween-fi-pr-monthly .notification__content,
+#banner-halloween-fr-pr-annual .notification__content,
+#banner-halloween-fi-pr-annual .notification__content {
+    width: 70%;
+    margin: 0 15%;
+  }
+}
+@media (min-width: 1400px) {
+  #banner-halloween .notification__content,
+#banner-halloween-fi-pr-monthly .notification__content,
+#banner-halloween-fr-pr-annual .notification__content,
+#banner-halloween-fi-pr-annual .notification__content {
+    width: 50%;
+    margin: 0 25%;
+  }
+}
+#banner-halloween .notification__close,
+#banner-halloween-fi-pr-monthly .notification__close,
+#banner-halloween-fr-pr-annual .notification__close,
+#banner-halloween-fi-pr-annual .notification__close {
+  box-shadow: inset 0 0 0 100px #164372 !important;
+  border-radius: 3px;
+  right: 5px;
+  z-index: 1;
+}
+#banner-halloween .notification__close:hover, #banner-halloween .notification__close.active,
+#banner-halloween-fi-pr-monthly .notification__close:hover,
+#banner-halloween-fi-pr-monthly .notification__close.active,
+#banner-halloween-fr-pr-annual .notification__close:hover,
+#banner-halloween-fr-pr-annual .notification__close.active,
+#banner-halloween-fi-pr-annual .notification__close:hover,
+#banner-halloween-fi-pr-annual .notification__close.active {
+  box-shadow: inset 0 0 0 100px #143B63 !important;
+}
+#banner-halloween .notification__close i,
+#banner-halloween-fi-pr-monthly .notification__close i,
+#banner-halloween-fr-pr-annual .notification__close i,
+#banner-halloween-fi-pr-annual .notification__close i {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+#banner-halloween .notification__close i:before,
+#banner-halloween-fi-pr-monthly .notification__close i:before,
+#banner-halloween-fr-pr-annual .notification__close i:before,
+#banner-halloween-fi-pr-annual .notification__close i:before {
+  height: 32px;
+  display: block;
+  line-height: 32px;
+}
+#banner-halloween .banner__price__title,
+#banner-halloween-fi-pr-monthly .banner__price__title,
+#banner-halloween-fr-pr-annual .banner__price__title,
+#banner-halloween-fi-pr-annual .banner__price__title {
+  display: inline-block;
+  font-size: 46px;
+  line-height: 100%;
+}
+#banner-halloween .banner__price__subtitle,
+#banner-halloween-fi-pr-monthly .banner__price__subtitle,
+#banner-halloween-fr-pr-annual .banner__price__subtitle,
+#banner-halloween-fi-pr-annual .banner__price__subtitle {
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  font-size: 30px;
+  line-height: 36px;
+}
+#banner-halloween .banner__price__subtitle span,
+#banner-halloween-fi-pr-monthly .banner__price__subtitle span,
+#banner-halloween-fr-pr-annual .banner__price__subtitle span,
+#banner-halloween-fi-pr-annual .banner__price__subtitle span {
+  display: block;
+  font-size: 13px;
+  line-height: 0;
+}
+#banner-halloween .banner__btn .font-xs,
+#banner-halloween-fi-pr-monthly .banner__btn .font-xs,
+#banner-halloween-fr-pr-annual .banner__btn .font-xs,
+#banner-halloween-fi-pr-annual .banner__btn .font-xs {
+  line-height: 13px;
+  margin-top: 8px;
+}
+#banner-halloween .banner__btn a,
+#banner-halloween-fi-pr-monthly .banner__btn a,
+#banner-halloween-fr-pr-annual .banner__btn a,
+#banner-halloween-fi-pr-annual .banner__btn a {
+  text-decoration: none;
+}
+#banner-halloween::before, #banner-halloween::after,
+#banner-halloween-fi-pr-monthly::before,
+#banner-halloween-fi-pr-monthly::after,
+#banner-halloween-fr-pr-annual::before,
+#banner-halloween-fr-pr-annual::after,
+#banner-halloween-fi-pr-annual::before,
+#banner-halloween-fi-pr-annual::after {
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: "";
+}
+@media (min-width: 992px) {
+  #banner-halloween::before, #banner-halloween::after,
+#banner-halloween-fi-pr-monthly::before,
+#banner-halloween-fi-pr-monthly::after,
+#banner-halloween-fr-pr-annual::before,
+#banner-halloween-fr-pr-annual::after,
+#banner-halloween-fi-pr-annual::before,
+#banner-halloween-fi-pr-annual::after {
+    width: 15%;
+  }
+}
+@media (min-width: 1400px) {
+  #banner-halloween::before, #banner-halloween::after,
+#banner-halloween-fi-pr-monthly::before,
+#banner-halloween-fi-pr-monthly::after,
+#banner-halloween-fr-pr-annual::before,
+#banner-halloween-fr-pr-annual::after,
+#banner-halloween-fi-pr-annual::before,
+#banner-halloween-fi-pr-annual::after {
+    width: 25%;
+  }
+}
+#banner-halloween::before,
+#banner-halloween-fi-pr-monthly::before,
+#banner-halloween-fr-pr-annual::before,
+#banner-halloween-fi-pr-annual::before {
+  left: -35px;
+  background-position: 100% 50%;
+  background-image: url("https://static.freepikcompany.com/flaticon/halloween/img/banners/halloween-left.svg");
+}
+#banner-halloween::after,
+#banner-halloween-fi-pr-monthly::after,
+#banner-halloween-fr-pr-annual::after {
+  right: -35px;
+  background-position: 0% 50%;
+  background-image: url("https://static.freepikcompany.com/flaticon/halloween/img/banners/halloween-right.svg");
+}
+#banner-halloween-fi-pr-annual::after {
+  right: -35px;
+  background-position: 0% 50%;
+  background-image: url("https://static.freepikcompany.com/flaticon/halloween/img/banners/halloween-fr-right.svg");
+}
+@media (max-width: 768px) {
+  #banner-halloween,
+#banner-halloween-fi-pr-monthly,
+#banner-halloween-fr-pr-annual,
+#banner-halloween-fi-pr-annual {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  #banner-halloween-fi-pr-monthly .banner__info .font-xl,
+#banner-halloween-fi-pr-monthly .banner__info .font-h6 {
+    font-size: 18px;
+  }
+}
+
+#banner-halloween-fr-pr-annual .banner__info {
+  max-width: 230px;
+}
+@media (max-width: 992px) {
+  #banner-halloween-fr-pr-annual .logo-horizontal {
+    display: none;
+  }
+  #banner-halloween-fr-pr-annual .logo-vertical {
+    display: block;
+  }
+}
+#banner-halloween .text__green--8,
+#banner-halloween-fi-pr-monthly .text__green--8 {
+  color: #00AF80;
+}
+#banner-halloween .text__gray--4,
+#banner-halloween-fi-pr-monthly .text__gray--4 {
+  color: #BAC8D3;
+}
