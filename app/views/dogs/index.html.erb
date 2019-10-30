@@ -4,7 +4,7 @@
     <div class="container" style="margin: 17px;">
       <div class="cards">
       <% @dogs.each do |dog| %>
-        <div class="card" style="wi<!-- ADD ELSE STATEMENT TO PUT PLACEHOLDER OR ELSE WILL CRASH -->dth: 12rem;">
+        <div class="card" style="width: 12rem;">
           <%= link_to dog_path(dog.id) do %>
           <!-- ADD ELSE STATEMENT TO PUT PLACEHOLDER OR ELSE WILL CRASH -->
           <%= cl_image_tag dog.photo, class:"card-img-top" %>
