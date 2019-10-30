@@ -9,6 +9,7 @@
 
 .main-dogs-container {
   display: flex;
+  min-height: calc(100vh - 126px)
 }
 
 #map {
