@@ -3,16 +3,16 @@
 <h2><%= @user.description %></h2>
 
 <h3>My fosterings</h3>
-<p><%= link_to "Find a paw to foster", dogs_path %></p>
 <% @user.fosterings.each do |fostering| %>
   <p><%= link_to fostering.dog.name, fostering_path(fostering) %> from <%= fostering.start_date %> to <%= fostering.end_date %></p>
-  <p><%= link_to "Delete this fostering", fostering_path(fostering), method: :delete %></p>
+  <p><%= link_to "Delete", fostering_path(fostering), method: :delete, class: "btn-main"%></p>
 <% end %>
+<p><%= link_to "Find a paw to foster", dogs_path, class: "btn-cta" %></p>
 
 <h3>Manage paws</h3>
 <% @user.dogs.each do |dog| %>
   <p><%= link_to dog.name, dog_path(dog) %> <%= dog.breed %> <%= dog.location %></p>
-  <p><%= link_to "Edit this paw", edit_dog_path(dog)%></p>
-  <p><%= link_to "Delete this paw", user_dashboard_path, method: :delete%></p>
+  <p><%= link_to "Edit", edit_dog_path(dog), class: "btn-main"%></p>
+  <p><%= link_to "Delete", dog_path(dog), method: :delete, class: "btn-main"%></p>
 <% end %>
-
+<p><%= link_to "New Dog", new_dog_path, class: "btn-main" %></p>
