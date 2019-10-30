@@ -4,6 +4,7 @@
 }
 
 .card {
+.card-home {
     display: flex;
     color: $dark-blue;
     align-items: center;
@@ -17,6 +18,7 @@
     p {
       margin:0;
     }
+  }
 }
 
 .container-about {
