@@ -7,3 +7,11 @@
 <% if policy(Dog).create? %>
   <%= link_to "New Dog", new_dog_path %>
 <% end %>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['pk.eyJ1IjoibXNueWRlcjE5MyIsImEiOiJjazF1NGx0a2swdjNjM2VudWR1b2V5NWk0In0.BzjSjP1ONJmKynLmWO0bMQ'] %>"
+></div>
