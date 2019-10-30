@@ -1,5 +1,5 @@
 class FosteringsController < ApplicationController
-  before_action :set_fostering, only: [:edit, :update, :show, :delete]
+  before_action :set_fostering, only: [:edit, :update, :show, :destroy]
 
   def show
     authorize @fostering

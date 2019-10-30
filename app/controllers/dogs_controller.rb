@@ -1,5 +1,9 @@
 class DogsController < ApplicationController
+<<<<<<< HEAD
+  before_action :set_dog, only: [:show, :edit, :update, :destroy, :new]
+=======
   before_action :set_dog, only: [:show, :edit, :update, :delete]
+>>>>>>> master
 
   def index
     @dogs = Dog.all

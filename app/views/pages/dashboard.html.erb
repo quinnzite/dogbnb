@@ -1,0 +1,18 @@
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<h2><%#= @user.age %></h2>
+<h2><%= @user.description %></h2>
+
+<h3>My fosterings</h3>
+<% @user.fosterings.each do |fostering| %>
+  <p><%= link_to fostering.dog.name, fostering_path(fostering) %> from <%= fostering.start_date %> to <%= fostering.end_date %></p>
+  <p><%= link_to "Add a new fostering", new_fostering_path %></p>
+  <p><%= link_to "Delete this fostering", user_dashboard_path, method: :delete %></p>
+<% end %>
+
+<h3>Manage paws</h3>
+<% @user.fosterings.each do |fostering| %>
+  <p><%= fostering.dog.name %> <%= fostering.dog.breed %> <%= fostering.dog.location %></p>
+  <p><%= link_to "Edit this paw", edit_dog_path(fostering.dog_id)%></p>
+  <p><%= link_to "Delete this paw", dog_path(fostering.dog), method: :delete%></p>
+<% end %>
+
