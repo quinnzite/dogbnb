@@ -1,7 +1,8 @@
-<h1>Add a new pal for <%= @dog.name %></h1>
-<p><%= @dog.breed %></p>
-<p><%= @dog.age %></p>
-<p><%= @dog.location %></p>
+<h1>Meet <%= @dog.name.capitalize %>!</h1>
+<%= cl_image_tag @dog.photo, height: 400, width: 400, crop: :fill, :radius=>"max" %>
+<p><strong>Breed: </strong><%= @dog.breed.capitalize %></p>
+<p><strong>Age: </strong><%= @dog.age %></p>
+<p><strong>Location: </strong><%= @dog.location.capitalize %></p>
 
 <%= simple_form_for [@dog, @fostering] do |f| %>
  <%= f.input :start_date %>
