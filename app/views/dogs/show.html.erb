@@ -35,8 +35,7 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for [@dog, @fostering] do |f| %>
-         <%= f.input :start_date %>
-         <%= f.input :end_date %>
+         <%= f.input :start_date, as: :hidden, html5: true %>
       </div>
       <div class="modal-footer justify-content-center">
          <%= f.submit class: "btn-main", style: 'width: 200px' %>
