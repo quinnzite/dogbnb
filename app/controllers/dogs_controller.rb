@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :edit, :update, :delete, :new]
+  before_action :set_dog, only: [:show, :edit, :update, :delete]
 
   def index
     @dogs = Dog.all
@@ -43,6 +43,6 @@ class DogsController < ApplicationController
   end
 
   def dog_params
-    params.require(:dog).permit(:name, :age, :breed, :description, :location)
+    params.require(:dog).permit(:name, :age, :breed, :description, :location, :photo)
   end
 end
