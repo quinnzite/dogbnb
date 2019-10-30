@@ -1,0 +1,21 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-dogs-container {
+  display: flex;
+  height: calc(100vh - 123px);
+}
+
+#map {
+  width: 30%;
+}
+
+.dogs-container {
+  flex-grow: 1;
+}
