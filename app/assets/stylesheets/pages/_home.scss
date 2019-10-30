@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+.overall-container {
+  min-height: calc(100vh - 123px)
+}
+
+.card {
 .card-home {
     display: flex;
     color: $dark-blue;
@@ -13,6 +18,7 @@
     p {
       margin:0;
     }
+  }
 }
 
 .container-about {
