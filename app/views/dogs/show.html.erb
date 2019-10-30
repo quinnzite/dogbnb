@@ -1,11 +1,50 @@
-<h1>Add a new pal for <%= @dog.name %></h1>
-<p><%= @dog.breed %></p>
-<p><%= @dog.age %></p>
-<p><%= @dog.location %></p>
 
-<%= simple_form_for [@dog, @fostering] do |f| %>
- <%= f.input :start_date %>
- <%= f.input :end_date %>
- <%= f.submit %>
-<% end %>
+<div class="container">
+  <h1 class = "meet-name" ><%= @dog.name.capitalize %></h1>
+    <div class="row d-flex justify-content-center" id = "dog-row">
+      <div class = "col-sm-6">
+        <div class = "dog-image">
+          <%= cl_image_tag @dog.photo, height: 500, width: 500, crop: :fill, class:"dog-image"%>
+        </div>
+      </div>
+      <div class = "col-sm-6 info-wrapper">
+      <h3><em><%= @dog.description %></em></h3>
+        <div class = "dog-info">
+          <p><strong>Breed: </strong><%= @dog.breed.capitalize %></p>
+          <p><strong>Age: </strong><%= @dog.age %></p>
+          <p><strong>Location: </strong><%= @dog.location.capitalize %></p>
+        </div>
+  </div>
+  </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn-cta" data-toggle="modal" data-target="#exampleModal">
+  Foster <%= @dog.name.capitalize %>
+</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= @dog.name.capitalize %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@dog, @fostering] do |f| %>
+         <%= f.input :start_date %>
+         <%= f.input :end_date %>
+      </div>
+      <div class="modal-footer justify-content-center">
+         <%= f.submit class: "btn-main", style: 'width: 200px' %>
+        <% end %>
+        <button type="button" class="btn-main" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 

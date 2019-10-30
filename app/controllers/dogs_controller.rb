@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :edit, :update, :delete]
+  before_action :set_dog, only: [:show, :edit, :update, :destroy]
 
   def index
     @dogs = Dog.all
@@ -48,7 +48,7 @@ class DogsController < ApplicationController
   def destroy
     authorize @dog
     @dog.destroy
-    redirect_to dogs_path
+    redirect_to user_dashboard_path
   end
 
   private
@@ -58,6 +58,6 @@ class DogsController < ApplicationController
   end
 
   def dog_params
-    params.require(:dog).permit(:name, :age, :breed, :description, :location)
+    params.require(:dog).permit(:name, :age, :breed, :description, :location, :photo)
   end
 end

@@ -1,5 +1,5 @@
 class FosteringsController < ApplicationController
-  before_action :set_fostering, only: [:edit, :update, :show, :delete]
+  before_action :set_fostering, only: [:edit, :update, :show, :destroy]
 
   def show
     authorize @fostering
@@ -26,7 +26,7 @@ class FosteringsController < ApplicationController
   def destroy
     authorize @fostering
     @fostering.destroy
-    redirect_to dogs_path
+    redirect_to user_dashboard_path
   end
 
   private
