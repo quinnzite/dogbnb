@@ -13,6 +13,10 @@
 .navbar{
   display:flex;
   justify-content:space-between;
+  height: 50px !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 53px !important;
   z-index: 5;
 }
@@ -33,4 +37,9 @@
 }
 .login a:hover{
   color: $bright-teal;
+}
+
+.sign-in-form {
+  margin-top: 90px;
+  padding: 20px
 }
