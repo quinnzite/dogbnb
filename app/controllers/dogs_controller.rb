@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+  has_many :fosterings, dependent: :destroy
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: :index
 
