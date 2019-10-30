@@ -16,13 +16,11 @@ last_names = ["winfrey", "buffay", "harrison", "rogan", "wiig"]
 descriptions = ["I love the doggos", "I love the doggos", "I love the doggos", "I love the doggos", "I love the doggos" ]
 ages = [45, 29, 60, 38, 40]
 user_photo = [
-  "http://static.oprah.com/images/o2/201308-omag-what-know-949x534.jpg",
-  "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.hellogiggles.com%2Fuploads%2F2016%2F05%2F23015746%2Fphoebe.jpg&w=400&c=sc&poi=face&q=85",
-  "https://assets.smoothradio.com/2018/07/george-harrison-1519399672-view-0.jpg",
-  "localhost:3000/assets/user_photos/phoebe.jpg",
-  "localhost:3000/assets/user_photos/george.jpg",
-  "localhost:3000/assets/user_photos/seth.jpg",
-  "localhost:3000/assets/user_photos/kristen.jpg"
+  "https://res.cloudinary.com/le-wagon1234/image/upload/v1572424499/oihagvombzm0ik5mqb3g.jpg",
+  "https://res.cloudinary.com/le-wagon1234/image/upload/v1572424504/ij8qo2zyzzdbog05hbek.jpg",
+  "https://res.cloudinary.com/le-wagon1234/image/upload/v1572424511/g5jhjus80lwtvfvmpvak.jpg",
+  "https://res.cloudinary.com/le-wagon1234/image/upload/v1572424852/PANews_N0099901369825076433A_I1_1_lsrey0.jpg",
+  "https://res.cloudinary.com/le-wagon1234/image/upload/v1572424844/kristin-wiig-e1555323373932_zbu4g7.jpg"
 ]
 
 
@@ -36,7 +34,7 @@ dog_descriptions = [
 "Loves to play ball, great with other dogs"
 ]
 breeds = ["boxer", "mutt", "pitbull", "labrador", "mutt"]
-locations = ["canggu", "canggu", "seminyak", "seminyak", "canggu"]
+locations = ["1495 McAllister St., San Francisco", "1495 McAllister St., San Francisco", "1495 McAllister St., San Francisco", "seminyak", "canggu"]
 photo = ["https://res.cloudinary.com/le-wagon1234/image/upload/v1572331601/tom-hills-zoF_dgsldlY-unsplash_tjcegs.jpg",
   "https://res.cloudinary.com/le-wagon1234/image/upload/v1572355540/roi-dimor-4Tx3p2DT4F4-unsplash_bymuqh.jpg",
 "https://res.cloudinary.com/le-wagon1234/image/upload/v1572331333/zachary-casler-99Qi-fLC3hs-unsplash_jadihq.jpg",
