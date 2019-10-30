@@ -11,7 +11,9 @@
   </head>
   <body>
     <%= render '/shared/nav_bar' %>
-    <%= yield %>
+    <div class="navbar-margin">
+      <%= yield %>
+    </div>
     <%= render 'shared/flashes' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
