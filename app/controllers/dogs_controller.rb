@@ -9,7 +9,9 @@ class DogsController < ApplicationController
       {
         lat: dog.latitude,
         lng: dog.longitude
+        # infoWindow: render_to_string(partial: "info_window", locals: { dog: dog })
       }
+    end
   end
 
   def show

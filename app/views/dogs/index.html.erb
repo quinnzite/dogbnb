@@ -1,17 +1,31 @@
-<% @dogs.each do |dog| %>
-  <ul>
-    <p><%= link_to dog.name, dog_path(dog)%></p>
-  </ul>
-<% end %>
+<div class="main-dogs-container">
+  <div class="dogs-container">
+  <h6 class="header">There are <%= @dogs.all.length %> Dogs in Your Location</h6>
+    <div class="container">
+      <div class="cards">
+      <% @dogs.each do |dog| %>
+        <div class="card" style="width: 12rem;">
+          <%= link_to dog_path(dog.id) do %>
+          <%= image_tag "choco_lab.jpg", class:"card-img-top" %>
+          <% end %>
+          <div class="index-card-body">
+            <h3 class="index-card-title"><%= dog.name %></h3>
+            <p><%= dog.description %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+    <%# if policy(Dog).create? %>
+      <%#= link_to "New Dog", new_dog_path %>
+    <%# end %>
+  </div>
+  <% if !Dog.all.nil? %>
+  <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+  <% end %>
+</div>
 
-<% if policy(Dog).create? %>
-  <%= link_to "New Dog", new_dog_path %>
-<% end %>
-
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['pk.eyJ1IjoibXNueWRlcjE5MyIsImEiOiJjazF1NGx0a2swdjNjM2VudWR1b2V5NWk0In0.BzjSjP1ONJmKynLmWO0bMQ'] %>"
-></div>
