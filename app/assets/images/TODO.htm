@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:3000/dogs/4 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TODO</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Vm2wCdh7blURmmtc2eUiuogccDy4Jm5vpRWgouSPpNwtON7Ecy5A5KNFL+TCT5NDQfUWAFP+EhDyzjJY+NVpMw==">
+    <meta name="action-cable-url" content="/cable">
+    <link rel="stylesheet" media="all" href="./TODO_files/application-059f180b7a6548ec4ee073e2a81174dc71bcae48625aaf58537f95a27ab889b8.css">
+     <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  </head>
+  <body cz-shortcut-listen="true">
+    <div class="navbar navbar-expand-sm navbar-light navbar-pawpal">
+  <div class="logo"> <a class="navbar-brand" href="http://localhost:3000/">
+    <img src="./TODO_files/LogoMakr_3cuTYO-5234d2f37d71fbe1ca72a1fb63a29f76afea0f9a6b8599a85dbd630069f6f585.png">
+</a>  </div>
+    <div class="logout">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="./TODO_files/ssaunier">
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="http://localhost:3000/dogs/4#">Profile</a>
+              <a class="dropdown-item" rel="nofollow" data-method="delete" href="http://localhost:3000/users/sign_out">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+    <div class="navbar-margin">
+      
+<div class="container">
+  <h1 class="meet-name">Mocha</h1>
+    <div class="row d-flex justify-content-center" id="dog-row">
+      <div class="col-sm-6">
+        <div class="dog-image">
+          <img height="500" width="500" class="dog-image" src="./TODO_files/gisi5fugc5kbvdevhvnk.jpg">
+        </div>
+      </div>
+      <div class="col-sm-6 info-wrapper">
+      <h3><em>A loving and gentle pup, loves to cuddle</em></h3>
+        <div class="dog-info">
+          <p><strong>Breed: </strong>Labrador</p>
+          <p><strong>Age: </strong>5 months</p>
+          <p><strong>Location: </strong>Seminyak</p>
+        </div>
+  </div>
+  </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn-cta" data-toggle="modal" data-target="#exampleModal">
+  Foster Mocha
+</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mocha</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="simple_form new_fostering" id="new_fostering" novalidate="novalidate" action="http://localhost:3000/dogs/4/fosterings" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Vm2wCdh7blURmmtc2eUiuogccDy4Jm5vpRWgouSPpNwtON7Ecy5A5KNFL+TCT5NDQfUWAFP+EhDyzjJY+NVpMw==">
+         <div class="form-group date required fostering_start_date"><label class="date required" for="fostering_start_date_1i">Start date <abbr title="required">*</abbr></label><div class="d-flex flex-row justify-content-between align-items-center"><select id="fostering_start_date_1i" name="fostering[start_date(1i)]" class="form-control mx-1 date required">
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019" selected="selected">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+</select>
+<select id="fostering_start_date_2i" name="fostering[start_date(2i)]" class="form-control mx-1 date required">
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="9">September</option>
+<option value="10" selected="selected">October</option>
+<option value="11">November</option>
+<option value="12">December</option>
+</select>
+<select id="fostering_start_date_3i" name="fostering[start_date(3i)]" class="form-control mx-1 date required">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30" selected="selected">30</option>
+<option value="31">31</option>
+</select>
+</div></div>
+         <div class="form-group date required fostering_end_date"><label class="date required" for="fostering_end_date_1i">End date <abbr title="required">*</abbr></label><div class="d-flex flex-row justify-content-between align-items-center"><select id="fostering_end_date_1i" name="fostering[end_date(1i)]" class="form-control mx-1 date required">
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019" selected="selected">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+</select>
+<select id="fostering_end_date_2i" name="fostering[end_date(2i)]" class="form-control mx-1 date required">
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="9">September</option>
+<option value="10" selected="selected">October</option>
+<option value="11">November</option>
+<option value="12">December</option>
+</select>
+<select id="fostering_end_date_3i" name="fostering[end_date(3i)]" class="form-control mx-1 date required">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30" selected="selected">30</option>
+<option value="31">31</option>
+</select>
+</div></div>
+      </form></div>
+      <div class="modal-footer justify-content-center">
+         <input type="submit" name="commit" value="Create Fostering" class="btn-main" style="width: 200px" data-disable-with="Create Fostering">
+        <button type="button" class="btn-main" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    </div>
+    
+    <script src="./TODO_files/application-3f720305f85ae2e8fa338de518a157da93bbc127bfa4497ad5d6599da89d149e.js"></script>
+    <script src="./TODO_files/application-1a62a4814a25238fb785.js"></script>
+    <div class="footer">
+  <div class="footer-links">
+    <a href="http://localhost:3000/dogs/4#"><i class="fab fa-instagram"></i></a>
+    <a href="http://localhost:3000/dogs/4#"><i class="fab fa-facebook"></i></a>
+    <a href="http://localhost:3000/dogs/4#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+    ©2019 Petfinder.com All trademarks are owned by Société des Produits Nestlé S.A., or used with permission.
+  </div>
+</div>
+
+  
+
+</body></html>
