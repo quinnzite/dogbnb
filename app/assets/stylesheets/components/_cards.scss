@@ -1,7 +1,8 @@
 .cards {
   display: grid;
   grid-template-columns: 250px 250px 250px;
-  grid-gap: 16px;
+  grid-gap: 20px;
+  padding: 0px 10px 10px 10px;
 }
 .header{
   padding: 10px 10px 10px 10px;
