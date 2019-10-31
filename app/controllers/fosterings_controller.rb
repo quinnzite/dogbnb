@@ -13,17 +13,20 @@ class FosteringsController < ApplicationController
 
   def create
     @fostering = Fostering.new
-    dates = params[:fostering][:start_date].split
-    @fostering.start_date = Date.parse(dates[0])
-    @fostering.end_date = Date.parse(dates[2])
+    if params[:fostering][:start_date].present?
+      dates = params[:fostering][:start_date].split
+      @fostering.start_date = Date.parse(dates[0])
+      @fostering.end_date = dates[2] ? Date.parse(dates[2]) : Date.parse(dates[0])
+    end
     authorize @fostering
     @fostering.user = current_user
-    @fostering.dog = Dog.find(params[:dog_id])
+    @dog = Dog.find(params[:dog_id])
+    @fostering.dog = @dog
 
     if @fostering.save
       redirect_to user_dashboard_path
     else
-      render :new
+      render 'dogs/show'
     end
   end
 
