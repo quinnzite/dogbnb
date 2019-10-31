@@ -4,7 +4,11 @@
     <div class="row d-flex justify-content-center" id = "dog-row">
       <div class = "col-sm-6">
         <div class = "dog-image">
-          <%= cl_image_tag @dog.photo, height: 500, width: 500, crop: :fill, class:"dog-image"%>
+          <% if @dog.photo.present? %>
+            <%= cl_image_tag @dog.photo, height: 500, width: 500, crop: :fill, class:"dog-image"%>
+          <% else %>
+            <%= cl_image_tag "https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png", height: 500, width: 500, crop: :fill, class:"dog-image" %>
+          <% end %>
         </div>
       </div>
       <div class = "col-sm-6 info-wrapper">
@@ -34,14 +38,20 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for [@dog, @fostering] do |f| %>
-         <%= f.input :start_date, as: :hidden, html5: true %>
+        <div id='dog-booking-dates' data-unavailable="<%= @dog.unavailable_dates.to_json %>" data-first-available="<%= @dog.first_available_date.to_json %>">
+          <% if current_user != @dog.user_id  %>
+             <%= simple_form_for([@dog, @fostering]) do |f| %>
+                 <%= f.input :start_date, as: :string, as: :hidden, placeholder: 'Choose the dates to foster', type: :text %>
+              <div class="modal-footer justify-content-center">
+                 <%= f.submit "Foster", class: "btn-main", style: 'width: 200px' %>
+                 <button type="button" class="btn-main" data-dismiss="modal">Close</button>
+              </div>
+              <% end %>
+          <% end %>
+        </div>
       </div>
-      <div class="modal-footer justify-content-center">
-         <%= f.submit class: "btn-main", style: 'width: 200px' %>
-        <% end %>
-        <button type="button" class="btn-main" data-dismiss="modal">Close</button>
-      </div>
+
+
     </div>
   </div>
 </div>

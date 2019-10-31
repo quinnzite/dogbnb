@@ -1,11 +1,17 @@
 class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @dogs = Dog.all
     @dogs = Dog.geocoded #returns flats with coordinates
-
+    @search = params["search"]
+    @dogs = Dog.all
+    if @search
+      @location = @search["location"]
+      @dogs = Dog.where("location ILIKE ?", "%#{@location}%")
+    else
+      @dogs = Dog.all
+    end
     @markers = @dogs.map do |dog|
       {
         lat: dog.latitude,
