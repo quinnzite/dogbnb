@@ -1,10 +1,10 @@
 <div class="main-dogs-container">
   <div class="dogs-container">
   <h6 class="header">There are <%= @dogs.all.length %> Dogs in Your Location</h6>
-    <div class="container" style="margin: 17px;">
+    <div class="container">
       <div class="cards">
       <% @dogs.each do |dog| %>
-        <div class="card" style="width: 12rem;">
+        <div class="card">
           <%= link_to dog_path(dog.id) do %>
           <% if dog.photo.present? %>
             <%= cl_image_tag dog.photo, height: 190, width: 190, crop: :fill, class:"card-img-top" %>
@@ -14,7 +14,6 @@
           <% end %>
           <div class="index-card-body">
             <h3 class="index-card-title"><%= dog.name %></h3>
-            <p><%= dog.description %></p>
           </div>
         </div>
       <% end %>
