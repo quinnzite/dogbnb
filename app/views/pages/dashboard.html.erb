@@ -1,18 +1,93 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
-<h2><%#= @user.age %></h2>
-<h2><%= @user.description %></h2>
+<div class = 'container-dashboard'>
+  <!-- <div class="col-sm-5"> -->
+  <div class = "container-profile-info">
+    <%= cl_image_tag @user.photo, :width => 300, :height => 300, :crop => "fill", class:"dash-photo" %>
+      <div class = "dash-text">
+      <h1><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h1>
+      <h4><em><%= @user.description %></em></h4>
+      <br>
+      <br>
+      <p>14 reviews</p>
+    </div>
+  </div>
+  <div class="container-dash-info">
+    <h2>Your Dashboard</h2>
+    <div id="exTab2" class="container-tabs">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="rounded-tab nav-link active" href="#1" data-toggle="tab">
+          My Fosterings
+          </a>
+        </li>
+        <li>
+          <a  class="nav-link rounded-tab" href="#2" data-toggle="tab">
+            My Paw Posts
+          </a>
+        </li>
+        <li>
+          <a  class="nav-link rounded-tab" href="#3" data-toggle="tab">
+            My Reviews
+          </a>
+        </li>
+      </ul>
+    </div>
 
-<h3>My fosterings</h3>
-<% @user.fosterings.each do |fostering| %>
-  <p><%= link_to fostering.dog.name, fostering_path(fostering) %> from <%= fostering.start_date %> to <%= fostering.end_date %></p>
-  <p><%= link_to "Delete", fostering_path(fostering), method: :delete, class: "btn-main"%></p>
-<% end %>
-<p><%= link_to "Find a paw to foster", dogs_path, class: "btn-cta" %></p>
+    <div class="tab-content ">
+      <div class="tab-pane active" id="1">
+          <% @user.fosterings.each do |fostering| %>
+        <div class="card-fostering-dash">
+            <%= cl_image_tag fostering.dog.photo, :width => 180, :height => 180, :crop => "fill", class:"fostering-dash-img" %>
+        <div class="info-buttons-container">
+          <div class="card-fostering-dash-infos">
+            <div class = "f-info1">
+              <h1><%= fostering.dog.name.capitalize %></h1>
+              <p><%= fostering.dog.breed.capitalize %></p>
+              <p><%= fostering.start_date.strftime("%A, %b %d") %> - <%= fostering.end_date.strftime("%A, %b %d") %></p>
+            </div>
+          </div>
+          <div class = "f-actions">
+            <p><%= link_to "View", dog_path(fostering.dog), style: "margin-right: 35px;", class: "btn-sm-white"%></p>
+            <p><%= link_to "Delete", fostering_path(fostering), method: :delete, class: "btn-sm-white"%></p>
+          </div>
+        </div>
+        </div>
+          <% end %>
 
-<h3>Manage paws</h3>
-<% @user.dogs.each do |dog| %>
-  <p><%= link_to dog.name, dog_path(dog) %> <%= dog.breed %> <%= dog.location %></p>
-  <p><%= link_to "Edit", edit_dog_path(dog), class: "btn-main"%></p>
-  <p><%= link_to "Delete", dog_path(dog), method: :delete, class: "btn-main"%></p>
-<% end %>
-<p><%= link_to "New Dog", new_dog_path, class: "btn-main" %></p>
+        <br>
+        <br>
+      </div>
+
+
+      <div class="tab-pane" id="2">
+          <% @user.dogs.each do |dog| %>
+        <div class="card-fostering-dash">
+          <%= cl_image_tag dog.photo, :width => 180, :height => 180, :crop => "fill", class:"fostering-dash-img" %>
+        <div class="info-buttons-container">
+          <div class="card-fostering-dash-infos">
+            <div class = "f-info1">
+              <h1><%=dog.name.capitalize %></h1>
+              <p><%= dog.breed.capitalize %></p>
+              <p>Fostering Info:</p>
+            </div>
+          </div>
+          <div class = "f-actions">
+            <p><%= link_to "View", dog_path(dog), class: "btn-sm-white"%></p>
+            <p><%= link_to "Edit", edit_dog_path(dog), class: "btn-sm-white"%></p>
+            <p><%= link_to "Delete", dog_path(dog), method: :delete, class: "btn-sm-white"%></p>
+          </div>
+        </div>
+        </div>
+          <% end %>
+        <br>
+        <br>
+      </div>
+
+
+      <div class="tab-pane" id="3">
+        <h3>Reviews</h3>
+      </div>
+    </div>
+
+  </div>
+</div>
+
