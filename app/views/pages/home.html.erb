@@ -3,7 +3,7 @@
       <h1>Paw Pals</h1>
       <p>Fostering connections between peeps and pups.</p>
       <%= simple_form_for :search, url: dogs_path, method: "GET" do |f| %>
-        <%= f.input :location, input_html: {value: ""}%>
+        <%= f.input :location,label: false, input_html: {value: ""}, placeholder: "\" Try Canggu \""%>
         <%= f.submit "Explore", class:"btn-cta" %>
       <% end %>
     </div>

@@ -112,3 +112,14 @@
     color: white;
 }
 
+.dropup, .dropright, .dropdown, .dropleft {
+    border: 3px solid #41AAA8;
+    border-radius: 30px;
+}
+
+.dropdown:hover {
+    border: 3px solid #51DACF;
+    border-radius: 30px;
+    cursor: pointer;
+}
+

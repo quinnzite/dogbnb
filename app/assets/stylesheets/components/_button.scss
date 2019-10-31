@@ -55,3 +55,25 @@
   background: $bright-teal;
   text-decoration: none;
 }
+
+.btn-sm-white{
+  color: #41AAA8;
+  background: #FFFFFF;
+  border: 2px solid #41AAA8;
+  border-radius: 68px;
+  padding: 7px 14px;
+  display: block;
+  text-align: center;
+  width: 70px;
+  font-size: 11px;
+}
+
+.btn-sm-white:hover{
+  opacity: 0.75;
+  color: $white;
+  background: $bright-teal;
+  border: 2px solid $white;
+  text-decoration: none;
+}
+
+
