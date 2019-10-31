@@ -2,7 +2,10 @@
     <div class="banner-content">
       <h1>Paw Pals</h1>
       <p>Fostering connections between peeps and pups.</p>
-      <%=  link_to "Explore", dogs_path, class:"btn-cta"  %>
+      <%= simple_form_for :search, url: dogs_path, method: "GET" do |f| %>
+        <%= f.input :location, input_html: {value: ""}, style: 'width: 700px' %>
+        <%= f.submit "Explore", class:"btn-cta" %>
+      <% end %>
     </div>
   </div>
 

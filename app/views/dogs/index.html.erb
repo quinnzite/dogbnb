@@ -1,6 +1,17 @@
 <div class="main-dogs-container">
   <div class="dogs-container">
-  <h6 class="header">There are <%= @dogs.all.length %> Dogs in Your Location</h6>
+    <% if @dogs.length == 0 %>
+      <h6 class="header">There are no Dogs in <%= @location %></h6>
+    <% elsif @dogs.length == 1 %>
+      <h6 class="header">There is <%= @dogs.all.length %> Dog in <%= @location %></h6>
+    <% elsif @dogs.length > 1 %>
+      <h6 class="header">There are <%= @dogs.all.length %> Dogs in <%= @location %></h6>
+    <% end %>
+    <%= simple_form_for :search, url: dogs_path, method: "GET" do |f| %>
+      <%= f.input :location, input_html: {value: ""}, style: 'width: 700px' %>
+
+      <%= f.submit "Filter", class:"btn-cta" %>
+    <% end %>
     <div class="container" style="margin: 17px;">
       <div class="cards">
       <% @dogs.each do |dog| %>
