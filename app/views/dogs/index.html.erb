@@ -6,8 +6,11 @@
       <% @dogs.each do |dog| %>
         <div class="card" style="width: 12rem;">
           <%= link_to dog_path(dog.id) do %>
-          <!-- ADD ELSE STATEMENT TO PUT PLACEHOLDER OR ELSE WILL CRASH -->
-          <%= cl_image_tag dog.photo, class:"card-img-top" %>
+          <% if dog.photo.present? %>
+            <%= cl_image_tag dog.photo, height: 190, width: 190, crop: :fill, class:"card-img-top" %>
+          <% else %>
+            <%= cl_image_tag "https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png", height: 190, width: 190, crop: :fill,class:"card-img-top" %>
+          <% end %>
           <% end %>
           <div class="index-card-body">
             <h3 class="index-card-title"><%= dog.name %></h3>
