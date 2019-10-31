@@ -6,7 +6,7 @@ class DogsController < ApplicationController
     @dogs = Dog.geocoded #returns flats with coordinates
     @search = params["search"]
     @dogs = Dog.all
-    unless @search["location"].empty?
+    if @search
       @location = @search["location"]
       @dogs = Dog.where("location ILIKE ?", "%#{@location}%")
     else
