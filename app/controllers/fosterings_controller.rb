@@ -19,6 +19,7 @@ class FosteringsController < ApplicationController
     authorize @fostering
     @fostering.user = current_user
     @fostering.dog = Dog.find(params[:dog_id])
+
     if @fostering.save
       redirect_to user_dashboard_path
     else
