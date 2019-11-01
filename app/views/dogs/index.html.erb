@@ -8,7 +8,7 @@
       <h6 class="header">There are <%= @dogs.all.length %> Dogs in <%= @location %></h6>
     <% end %>
     <div class="container" style="margin: 17px;">
-  <h6 class="header">There are <%= @dogs.all.length %> Dogs in Your Location</h6>
+
     <div class="container">
       <div class="cards">
       <% @dogs.each do |dog| %>
@@ -27,6 +27,7 @@
       <% end %>
     </div>
   </div>
+</div>
     <%# if policy(Dog).create? %>
       <%#= link_to "New Dog", new_dog_path %>
     <%# end %>
