@@ -7,8 +7,8 @@ class Dog < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
   mount_uploader :photo, PhotoUploader
 
-  validates :start_date, :end_date, presence: true
-  validate :end_date_after_start_date
+  # validates :start_date, :end_date, presence: true
+  # validate :end_date_after_start_date
 
   def unavailable_dates
     fosterings.pluck(:start_date, :end_date).map do |range|

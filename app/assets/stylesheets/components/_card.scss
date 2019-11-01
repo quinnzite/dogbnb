@@ -1,15 +1,13 @@
 
 .card {
-  border-color: #3FABAA;
+  // border-color: #3FABAA;
+  border-radius: 10%;
 }
 
 .card-img-top {
-
+   border-radius: 10%;
 }
 
-.card-body {
-
-}
 
 .card-title {
   font-size: 30px;
@@ -32,8 +30,9 @@
 }
 
 .index-card-title {
-  font-size: 35px;
-  margin-bottom: 1px;
+  font-size: 25px;
+  margin-bottom: 3px;
+  margin-top: 3px;
 }
 
 .index-card-text {
