@@ -103,7 +103,9 @@
         <% dog.fosterings.each do |fostering| %>
         <div class = 'review-container'>
           <div class = 'review-card-top'>
-         <h4><%= cl_image_tag fostering.user.photo, class:"foster-img-avatar"%> <%= fostering.user.first_name.capitalize%> <%=fostering.user.last_name.capitalize%>
+         <h4><%= cl_image_tag fostering.user.photo,
+         class:"foster-img-avatar"%>
+         <%= fostering.user.first_name.capitalize%> <%=fostering.user.last_name.capitalize%>
         <% fostering.reviews.each do |review| %>
          gave <%= review.rating %></h4>
             </div>
