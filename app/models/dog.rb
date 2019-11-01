@@ -7,6 +7,17 @@ class Dog < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
   mount_uploader :photo, PhotoUploader
 
+
+  def next_dog
+    # search for all the dogs with the id bigger than the actual dog one and give me the first dog
+    @dog = Dog.where("id > ?", id).first
+  end
+
+  def previous_dog
+    @dog = Dog.where("id < ?", id).last
+  end
+
+
   def unavailable_dates
     fosterings.pluck(:start_date, :end_date).map do |range|
       { from: range[0], to: range[1] }
