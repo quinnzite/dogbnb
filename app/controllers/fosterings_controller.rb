@@ -26,7 +26,10 @@ class FosteringsController < ApplicationController
     if @fostering.save
       redirect_to user_dashboard_path
     else
-      render 'dogs/show'
+      format.html {
+        flash[:example_modal] = true
+        render 'dogs/show'
+      }
     end
   end
 

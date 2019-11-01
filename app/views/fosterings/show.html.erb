@@ -7,7 +7,7 @@
   <%= r.content %>
 <% end %>
 
-<%= simple_form_for [@fostering, Review.new] do |f| %>
+<%= simple_form_for [@fostering, @review] do |f| %>
   <%= f.input :rating %>
   <%= f.input :content %>
   <%= f.button :submit %>
