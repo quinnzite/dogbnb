@@ -59,7 +59,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <div id='dog-bookingf-dates' data-unavailable="<%= @dog.unavailable_dates.to_json %>" data-first-available="<%= @dog.first_available_date.to_json %>">
+        <div id='dog-booking-dates' data-unavailable="<%= @dog.unavailable_dates.to_json %>" data-first-available="<%= @dog.first_available_date.to_json %>">
           <% if current_user != @dog.user_id  %>
              <%= simple_form_for([@dog, @fostering]) do |f| %>
                  <%= f.input :start_date, as: :string, as: :hidden, class: "dog-calendar", placeholder: 'Choose the dates to foster', type: :text%>
