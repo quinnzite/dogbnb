@@ -42,3 +42,26 @@
   padding: 20px;
 }
 
+.dropup, .dropright, .dropdown, .dropleft {
+    border: 3px solid #41AAA8;
+    border-radius: 30px;
+}
+
+.dropdown:hover {
+    border: 3px solid #51DACF;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.search-bar {
+  width: 100% !important;
+}
+
+.foster-img {
+  background-size: cover;
+  height: 175px;
+  background-position: center;
+  padding: 20px;
+}
+
+
