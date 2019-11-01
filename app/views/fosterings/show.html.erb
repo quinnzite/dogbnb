@@ -1,15 +1,108 @@
-<%= @fostering.user.first_name %>
-<%= @fostering.dog.name %>
-<%= @fostering.start_date %>
-<%= @fostering.end_date %>
-<% @fostering.reviews.each do |r| %>
-  <%= r.rating %>
-  <%= r.content %>
-<% end %>
+<% if current_user == @fostering.user %>
+  <div class="conatiner">
+    <div class="col-md-6 mx-auto p-5">
+      <div class="pb-2">
+        <h2 class="text-center"> <%=@fostering.dog.name.capitalize%> is excited to meet you <%=@fostering.user.first_name%>! </h2>
+      </div>
+      <div class="col-md-12 mx-auto text-center pb-2">
+        <h5> <%= @fostering.start_date.strftime("%A, %b %d") %> - <%= @fostering.end_date.strftime("%A, %b %d") %></h5>
 
-<%= simple_form_for [@fostering, @review] do |f| %>
-  <%= f.input :rating %>
-  <%= f.input :content %>
-  <%= f.button :submit %>
+      </div>
+      <div class="row py-5 border-top border-bottom border-secondary">
+        <div class="col-md-3 card rounded p-5 foster-img" style="background-image: url('<%= @fostering.dog.photo %>')">
+          <!-- <img src="<%= @fostering.dog.photo %>" alt="" style="height: 150px;" > -->
+        </div>
+        <div class="col-md-9">
+          <h3>About <%=@fostering.dog.name.capitalize%></h3>
+          <h5><%=@fostering.dog.description%></h5>
+          <h5>Age: <%=@fostering.dog.age%></h5>
+          <h5>From: <%=@fostering.dog.location%></h5>
+        </div>
+      </div>
+      <div class="pt-3 d-flex justify-content-between">
+
+        <button type="button" class="btn-cta" style="width: 250px" data-toggle="modal" data-target="#exampleModal">
+          Review your experience
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><%= @fostering.dog.name.capitalize %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for [@fostering, @review] do |f| %>
+                  <%= f.input :rating %>
+                  <%= f.input :content %>
+                  <div class="justify-content-center">
+                  <%= f.button :submit, class: "btn-cta" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div>
+          <%= link_to "Return to dashboard", user_dashboard_path, class: "btn-cta" %>
+          </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="conatiner">
+    <div class="col-md-6 mx-auto p-5">
+      <div class="pb-2">
+        <h2 class="text-center"> <%=@fostering.user.first_name.capitalize%> is excited to foster <%=@fostering.dog.name.capitalize%>! </h2>
+      </div>
+      <div class="col-md-12 mx-auto text-center pb-2">
+        <h5> <%= @fostering.start_date.strftime("%A, %b %d") %> - <%= @fostering.end_date.strftime("%A, %b %d") %></h5>
+
+      </div>
+      <div class="row py-5 border-top border-bottom border-secondary">
+        <div class="col-md-3 card rounded p-5 foster-img" style="background-image: url('<%= @fostering.user.photo %>')">
+          <!-- <img src="<%= @fostering.dog.photo %>" alt="" style="height: 150px;" > -->
+        </div>
+        <div class="col-md-9">
+          <h3>About <%=@fostering.user.first_name.capitalize%></h3>
+          <h5>Email: <%=@fostering.user.email%></h5>
+          <h5>Age: <%=@fostering.user.age%></h5>
+          <h5><%=@fostering.user.description%></h5>
+        </div>
+      </div>
+      <div class="pt-3 d-flex justify-content-between">
+
+        <button type="button" class="btn-cta" style="width: 250px" data-toggle="modal" data-target="#exampleModal">
+          Review your experience
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><%= @fostering.dog.name.capitalize %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for [@fostering, @review] do |f| %>
+                  <%= f.input :rating %>
+                  <%= f.input :content %>
+                  <div class="justify-content-center">
+                  <%= f.button :submit, class: "btn-cta" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div>
+          <%= link_to "Return to dashboard", user_dashboard_path, class: "btn-cta" %>
+          </div>
+      </div>
+    </div>
+  </div>
 <% end %>
 

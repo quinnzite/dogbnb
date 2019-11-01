@@ -114,8 +114,9 @@
 }
 
 .nav-form:hover .fa{
-    background: #07051a;
-    color: white;
+  background: #07051a;
+  color: white;
+  padding: 20px;
 }
 
 .dropup, .dropright, .dropdown, .dropleft {
@@ -132,4 +133,12 @@
 .search-bar {
   width: 100% !important;
 }
+
+.foster-img {
+  background-size: cover;
+  height: 175px;
+  background-position: center;
+  padding: 20px;
+}
+
 

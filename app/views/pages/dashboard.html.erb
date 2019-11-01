@@ -7,11 +7,12 @@
       <h4><em><%= @user.description %></em></h4>
       <br>
       <br>
-      <p>14 reviews</p>
+      <h5>Average Rating</h5>
+       <%= image_tag "four_half_stars.png", :width => 100, :height => 20 %>
     </div>
   </div>
   <div class="container-dash-info">
-    <h2>Your Dashboard</h2>
+    <h2>My Dashboard</h2>
     <div id="exTab2" class="container-tabs">
       <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -43,18 +44,20 @@
               <h1><%= fostering.dog.name.capitalize %></h1>
               <h4><%= fostering.dog.breed.capitalize %></h4>
               <%= link_to fostering_path(fostering), class:"link-tag" do %>
-              <p><strong>Fostering: </strong><%= fostering.start_date.strftime("%A, %b %d") %> - <%= fostering.end_date.strftime("%A, %b %d") %></p>
+              <p><strong>Fostering: </strong><%= fostering.start_date.strftime("%b %d") %> - <%= fostering.end_date.strftime("%b %d") %></p>
               <% end %>
-              <%= cl_image_tag fostering.dog.user.photo, class:"foster-img-avatar"%> <%= fostering.dog.user.first_name.capitalize %> <%=fostering.dog.user.last_name.capitalize  %>
+              <strong>Owner: </strong><%= fostering.dog.user.first_name.capitalize %> <%=fostering.dog.user.last_name.capitalize  %> <%= cl_image_tag fostering.dog.user.photo, class:"foster-img-avatar"%>
             </div>
           </div>
           <div class = "f-actions1">
-            <p><%= link_to "View", dog_path(fostering.dog), style: "margin-right: 35px;", class: "btn-sm-white"%></p>
+            <p><%= link_to "View", dog_path(fostering.dog), style: "margin-left: 35px;", class: "btn-sm-white"%></p>
             <p><%= link_to "Delete", fostering_path(fostering), method: :delete, class: "btn-sm-white"%></p>
           </div>
         </div>
         </div>
           <% end %>
+        <br>
+        <p><%= link_to "Browse Pups", dogs_path, style: "margin-left: 210px;", class: "btn-cta"%></p>
       </div>
 
 
@@ -73,7 +76,7 @@
             <li>
               <div class ="post-items">
               <%= link_to fostering_path(fostering), class:"link-tag" do %>
-              <%= cl_image_tag fostering.user.photo, class:"foster-img-avatar"%> <%= fostering.user.first_name.capitalize %> <%=fostering.user.last_name.capitalize  %>: <%= fostering.start_date.strftime("%b %d") %>-<%= fostering.end_date.strftime("%b %d") %>
+              <%= cl_image_tag fostering.user.photo, class:"foster-img-avatar"%> <%= fostering.user.first_name.capitalize %> <%=fostering.user.last_name.capitalize  %>: <%= fostering.start_date.strftime("%b %d") %> - <%= fostering.end_date.strftime("%b %d") %>
                 <% end %>
                 </div>
               </li>
@@ -91,12 +94,26 @@
         </div>
           <% end %>
         <br>
-        <br>
+         <p><%= link_to "New Paw Post", new_dog_path, style: "margin-left: 210px;", class: "btn-cta"%></p>
       </div>
 
 
       <div class="tab-pane" id="3">
-        <h3>Reviews</h3>
+        <% @user.dogs.each do |dog| %>
+        <% dog.fosterings.each do |fostering| %>
+        <div class = 'review-container'>
+          <div class = 'review-card-top'>
+         <h4><%= cl_image_tag fostering.user.photo, class:"foster-img-avatar"%> <%= fostering.user.first_name.capitalize%> <%=fostering.user.last_name.capitalize%>
+        <% fostering.reviews.each do |review| %>
+         gave <%= review.rating %></h4>
+            </div>
+            <div class = 'review-card-bottom'>
+          <p><em>"<%= review.content %>"</em></p>
+        </div>
+        <% end %>
+         </div>
+         <% end %>
+         <% end %>
       </div>
     </div>
 
