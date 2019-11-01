@@ -41,20 +41,20 @@
           <div class="card-fostering-dash-infos">
             <div class = "f-info1">
               <h1><%= fostering.dog.name.capitalize %></h1>
-              <p><%= fostering.dog.breed.capitalize %></p>
-              <p><%= fostering.start_date.strftime("%A, %b %d") %> - <%= fostering.end_date.strftime("%A, %b %d") %></p>
+              <h4><%= fostering.dog.breed.capitalize %></h4>
+              <%= link_to fostering_path(fostering), class:"link-tag" do %>
+              <p><strong>Fostering: </strong><%= fostering.start_date.strftime("%A, %b %d") %> - <%= fostering.end_date.strftime("%A, %b %d") %></p>
+              <% end %>
+              <%= cl_image_tag fostering.dog.user.photo, class:"foster-img-avatar"%> <%= fostering.dog.user.first_name.capitalize %> <%=fostering.dog.user.last_name.capitalize  %>
             </div>
           </div>
-          <div class = "f-actions">
+          <div class = "f-actions1">
             <p><%= link_to "View", dog_path(fostering.dog), style: "margin-right: 35px;", class: "btn-sm-white"%></p>
             <p><%= link_to "Delete", fostering_path(fostering), method: :delete, class: "btn-sm-white"%></p>
           </div>
         </div>
         </div>
           <% end %>
-
-        <br>
-        <br>
       </div>
 
 
@@ -66,8 +66,20 @@
           <div class="card-fostering-dash-infos">
             <div class = "f-info1">
               <h1><%=dog.name.capitalize %></h1>
-              <p><%= dog.breed.capitalize %></p>
-              <p>Fostering Info:</p>
+              <h4><strong>Fosterings</strong></h4>
+          <div class = "upcoming-fosterings-grouping">
+              <% dog.fosterings.each do |fostering| %>
+            <ul style="list-style-type:none">
+            <li>
+              <div class ="post-items">
+              <%= link_to fostering_path(fostering), class:"link-tag" do %>
+              <%= cl_image_tag fostering.user.photo, class:"foster-img-avatar"%> <%= fostering.user.first_name.capitalize %> <%=fostering.user.last_name.capitalize  %>: <%= fostering.start_date.strftime("%b %d") %>-<%= fostering.end_date.strftime("%b %d") %>
+                <% end %>
+                </div>
+              </li>
+            </ul>
+            <% end %>
+          </div>
             </div>
           </div>
           <div class = "f-actions">
