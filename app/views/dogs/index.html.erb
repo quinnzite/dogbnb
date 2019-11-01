@@ -1,11 +1,18 @@
 <div class="main-dogs-container">
   <div class="dogs-container">
+    <div class="sub-navbar">
+      <div class="nav-search">
+        <%= simple_form_for :search, url: dogs_path, method: "GET" do |f| %>
+          <%= f.input :location,label: false, input_html: {value: ""}, placeholder: "Search Any location"%>
+        <% end %>
+      </div>
+    </div>
     <% if @dogs.length == 0 %>
       <h6 class="header">There are no Dogs in <%= @location %></h6>
     <% elsif @dogs.length == 1 %>
       <h6 class="header">There is <%= @dogs.all.length %> Dog in <%= @location %></h6>
-    <% elsif @dogs.length > 1 && @location.present? %>
-      <h6 class="header">Here are all the dogs</h6>
+    <% elsif @dogs.length > 1 && @location.blank? %>
+      <h6 class="header">Find Your New Paw Pal</h6>
     <% else @dogs.length > 1 %>
       <h6 class="header">There are <%= @dogs.all.length %> Dogs in <%= @location %></h6>
     <% end %>
