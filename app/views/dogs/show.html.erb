@@ -41,7 +41,7 @@
         <div id='dog-booking-dates' data-unavailable="<%= @dog.unavailable_dates.to_json %>" data-first-available="<%= @dog.first_available_date.to_json %>">
           <% if current_user != @dog.user_id  %>
              <%= simple_form_for([@dog, @fostering]) do |f| %>
-                 <%= f.input :start_date, as: :string, as: :hidden, placeholder: 'Choose the dates to foster', type: :text%>
+                 <%= f.input :start_date, as: :string, as: :hidden, class: "dog-calendar", placeholder: 'Choose the dates to foster', type: :text%>
               <div class="modal-footer justify-content-center">
                  <%= f.submit "Foster", class: "btn-main", style: 'width: 200px' %>
                  <button type="button" class="btn-main" data-dismiss="modal">Close</button>
@@ -55,5 +55,8 @@
     </div>
   </div>
 </div>
+<% if flash[:example_modal] %>
+  $('#example-modal').modal('show');
+<% end %>
 
 
