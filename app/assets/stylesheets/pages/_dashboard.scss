@@ -22,7 +22,12 @@
 
 .container-dash-info {
   margin: 50px;
-  width: 30vw;
+  width: 40vw;
+}
+
+.tab-content {
+  height: 590px;
+  overflow: scroll;
 }
 
 .dash-photo {
@@ -118,7 +123,7 @@ a.rounded-tab.nav-link.active{
 .f-actions {
   padding-left: 30px;
   display: flex;
-  margin-top: -15px;
+  margin-top: -18px;
 }
 
 .f-actions1 {
@@ -132,8 +137,32 @@ a.rounded-tab.nav-link.active{
   height: 40px !important;
   border-radius: 50% !important;
   background-position: center !important;
+  object-fit: cover !important;
 }
 
+.review-container {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50px;
+  align-items: center;
+  color: $dark-blue;
+  width: 650px;
+  height: 200px;
+  margin-bottom: 15px;
+}
 
+.review-card-top {
+  padding-top: 20px;
+  margin-left: 10px;
+}
 
+.review-card-bottom {
+  padding-top: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+  text-align: center;
+  font-size: 18px;
+}
 

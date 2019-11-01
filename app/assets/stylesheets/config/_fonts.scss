@@ -1,8 +1,8 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Questrial:400,100,300,700,500");
+@import url("https://fonts.googleapis.com/css?family=Questrial|Red+Hat+Display:400,400i,500,500i,700,700i,900,900i");
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
+$body-font: "Red Hat Display" !important;
 $headers-font: "Questrial", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
