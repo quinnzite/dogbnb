@@ -52,19 +52,20 @@ a.rounded-tab.nav-link.active{
   margin-top: 20px;
 }
 
+
 .card-fostering-dash {
   background: white;
   display: flex;
   border-radius: 50px;
   align-items: center;
   color: $dark-blue;
-  margin-top: 20px;
-  width: 600px;
+  width: 650px;
+  margin-bottom: 15px;
 }
 
 .card-fostering-dash img {
     height: 100%;
-    width: 200px;
+    width: 250px;
     object-fit: cover;
     border-top-left-radius: 43px;
     border-bottom-left-radius: 43px;
@@ -76,23 +77,63 @@ a.rounded-tab.nav-link.active{
     height: 200px;
 }
 
+
+.card-fostering-dash h1 {
+
+  margin-top: -30px;
+
+}
+
+
+
 .card-fostering-dash p {
   font-size: 16px;
   line-height: 1.4;
-  opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
   padding-right: 10px;
 }
+
+
+.upcoming-fosterings-grouping{
+  margin-left: -30px;
+  margin-top: 5px;
+  height: 100px;
+  overflow: scroll;
+}
+
+.link-tag {
+  color: $dark-blue !important;
+}
+
 
 .card-fostering-dash-infos {
     display: flex;
     flex-direction: column;
     padding: 15px;
     padding-left: 31px;
+    color: $dark-blue;
 }
 
 .f-actions {
   padding-left: 30px;
   display: flex;
+  margin-top: -15px;
 }
+
+.f-actions1 {
+  padding-left: 30px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.foster-img-avatar{
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background-position: center !important;
+}
+
+
+
+
